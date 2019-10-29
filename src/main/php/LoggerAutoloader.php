@@ -81,6 +81,7 @@ class LoggerAutoloader {
 		'LoggerFilterDenyAll' => '/filters/LoggerFilterDenyAll.php',
 		'LoggerFilterLevelMatch' => '/filters/LoggerFilterLevelMatch.php',
 		'LoggerFilterLevelRange' => '/filters/LoggerFilterLevelRange.php',
+        'LoggerFilterNameMatch' => '/filters/LoggerFilterNameMatch.php',
 		'LoggerFilterStringMatch' => '/filters/LoggerFilterStringMatch.php',
 
 		// Helpers
