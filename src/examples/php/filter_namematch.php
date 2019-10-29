@@ -7,7 +7,7 @@
  * (the "License"); you may not use this file except in compliance with
  * the License. You may obtain a copy of the License at
  *
- *	   http://www.apache.org/licenses/LICENSE-2.0
+ *         http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -15,29 +15,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+// START SNIPPET: doxia
+require_once dirname(__FILE__).'/../../main/php/Logger.php';
 
-/**
- * A NullAppender merely exists, it never outputs a message to any device.	
- *
- * This appender has no configurable parameters.
- * 
- * @package log4php
- * @subpackage appenders
- * @license http://www.apache.org/licenses/LICENSE-2.0 Apache License, Version 2.0
- * @link http://logging.apache.org/log4php/docs/appenders/null.html Appender documentation
- */
-class LoggerAppenderNull extends LoggerAppender {
+Logger::configure(dirname(__FILE__).'/../resources/filter_namematch.xml');
+$loggerFoo = Logger::getLogger('foo');
+$loggerBar = Logger::getLogger('bar');
 
-	/** 
-	 * This appender does not require a layout. 
-	 */
-	protected $requiresLayout = false;
-	
-	/**
-	 * Do nothing. 
-	 * 
-	 * @param LoggerLoggingEvent $event
-	 */
-	public function append(LoggerLoggingEvent $event) {
-	}
-}
+$loggerFoo->info("Messages from foo are denied due to the second filter");
+$loggerBar->info("Messages from bar are accepted");

@@ -1,2 +1,18 @@
 target
 temp
+
+# Composer files
+vendor
+composer.lock
+
+# Eclipse project files
+.buildpath
+.settings
+.project
+
+# PhpStorm project files
+.idea
+
+# Vim swapfiles.
+.*.swp
+.*.swo
