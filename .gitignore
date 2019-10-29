@@ -11,3 +11,7 @@ temp
 
 # Composer Files
 vendor/
+
+# Vim swapfiles.
+.*.swp
+.*.swo
